@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+</head>
+
+<body>       
+
+    <header>
+
+        <h1>Quiz Games</h1>
+        <nav>
+            <ul>
+                <li ><a href="index.html"><i class="fa fa-home icon"></i></a></li>
+                <li><a href="Game1/index.html"><i class="fa fa-gamepad icon"></i></a></li>
+                <li><a href="Game2/index.html"><i class="fa fa-mobile icon"></i></a></li>
+                <li><a href="contact.html"><i class="fa fa-envelope icon"></i></a></li>
+
+            </ul>
+        </nav>
+
+        
+        <button id="styleSwitcher">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+        
+    </header>
+    <div class="player">
+        <div class="howler-player">
+            <button id="playBtn"><i class="fa-solid fa-play"></i></button>
+            <button id="pauseBtn"><i class="fa-solid fa-pause"></i></button>
+            <button id="nextBtn"><i class="fa-solid fa-forward"></i></button>
+        </div>
+</div>
+    <main>
+        <div id="snowflakes"></div>
+
+    </div>  
+        <section class="card-container">
+            <div class="card" id="game1-card" data-game="Game1/index.html">
+                <a href="#">
+                    <img src="Game1/img/GuessTheCountry.png" alt="Game 1 Image" class="game-image">
+                   
+                </a>
+                <div class="game-content" id="game1-content" style="display:none;">
+                    <iframe id="game1-iframe" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+
+
+            <div class="card" id="game1-card" data-game="Game2/index.html">
+                <a href="#">
+                    <img src="Game2/img/GuessTheFlag.png" alt="Game 1 Image" class="game-image">
+                    
+                </a>
+                <div class="game-content" id="game1-content" style="display:none;">
+                    <iframe id="game2-iframe" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+        
+    <div class="logo-hope"> 
+        <img src="images/hope.png" alt="">
+    </div>
+ 
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+<footer>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/bvd" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/bvd" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/bvd" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/bvd" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+</footer>
+</html>
+
+
+

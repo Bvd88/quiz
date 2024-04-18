@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Quiz Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Quiz Games</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Game1/index.html">Game1 on Phone</a></li>
+                <li><a href="Game2/index.html">Game2 on Phone</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="styleSwitcher">Switch Style</button>
+    </header>
+
+    <main>
+        <form id="contactForm" action="/send" method="post">
+            <input type="text" id="name" placeholder="Name">
+            <span class="validation-icon" id="name-icon"></span>
+
+            <input type="email" id="email" placeholder="Email">
+            <span class="validation-icon" id="email-icon"></span>
+
+            <input type="tel" id="phone" placeholder="Phone Number">
+            <span class="validation-icon" id="phone-icon"></span>
+
+            <input type="date" id="dob">
+            <span class="validation-icon" id="dob-icon"></span>
+
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <span class="validation-icon" id="message-icon"></span>
+
+            <div>
+                Gender: 
+                <input type="radio" id="male" name="gender" value="male"> Male
+                <input type="radio" id="female" name="gender" value="female"> Female
+                <input type="radio" id="other" name="gender" value="other"> Other
+                <span class="validation-icon" id="gender-icon"></span>
+            </div>
+
+            <select id="country">
+                <option value="">Select Country</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Europe">Europe </option>
+                <option value="Other">Other</option>
+            </select>
+            <span class="validation-icon" id="country-icon"></span>
+
+            <input type="checkbox" id="terms"> Agree to terms and conditions
+            <span class="validation-icon" id="terms-icon"></span>
+
+            <button type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Submit
+            </button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/bvd" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/bvd" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/bvd" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bvd" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="footer-name" id="animate-name">Victor-Daniel Bucur</p>
+    </footer>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            // Name validation
+            var name = document.getElementById('name').value;
+            if (!name.match(/^[A-Za-z ]+$/)) {
+                alert("Name must only contain alphabetic characters.");
+                return;
+            }
+    
+            // Email validation
+            var email = document.getElementById('email').value;
+            if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+    
+            // Phone Number validation
+            var phone = document.getElementById('phone').value;
+            if (!phone.match(/^\d{10}$/)) {
+                alert("Phone number must be 10 digits.");
+                return;
+            }
+    
+            // Date of Birth validation
+            var dob = new Date(document.getElementById('dob').value);
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+            var m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            if (age < 18) {
+                alert("You must be at least 18 years old.");
+                return;
+            }
+    
+            // Message validation
+            var message = document.getElementById('message').value;
+            if (message.length < 20) {
+                alert("Message must be at least 20 characters long.");
+                return;
+            }
+    
+            // Country validation
+            var country = document.getElementById('country').value;
+            if (country === "") {
+                alert("Please select a country.");
+                return;
+            }
+    
+            // If all validations pass, submit the form
+            this.submit();
+        });
+        if (allValidationsPass) {
+        this.submit(); 
+    }
+    </script>
+    <style>
+        
+/* Form and input field styling */
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 6px -6px black;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="password"],
+form textarea,
+form select {
+    width: calc(100% - 30px); /* Adjusted width to account for padding and validation icon */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.validation-icon {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle; /* Aligns icon with the middle of the input field */
+}
+
+/* Adjustments for submit button with icon */
+button[type="submit"] {
+    background-color: #886008;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust as needed */
+    text-align: center;
+    width: 100%;
+}
+
+button[type="submit"] i {
+    margin-right: 5px;
+}
+    </style>
+    
+</body>
+</html>

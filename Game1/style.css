@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif, 'Roboto';
+}
+body {
+    background-color: #886008;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #fff;
+    height: 100vh;
+    font-size: 16px; 
+}
+
+section {
+    max-width: 90%;
+    width: 100%;
+    padding: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+#start-screen, #final-screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-screen {
+    display: none;
+}
+
+#start-screen h2, #game-screen h2, #final-screen h2 {
+    font-family: 'Roboto';
+    font-size: 60px;
+    text-shadow: 3px 3px 10px #000;
+}
+
+#start-screen h2 span, #game-screen h2 span {
+    color: #ffff0d;
+}
+
+button {
+    font-size: 30px;
+    display: inline-block;
+    border: none;
+    padding: 10px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    background: #1cff03;
+    color: #000;
+}
+
+button:hover {
+    background-color: #ffff0d;
+}
+
+#game-screen .country-container {
+    margin-top: 40px;
+}
+
+#game-screen .country-container .letter {
+    display: inline-block;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    font-size:50px;
+    margin: 2px;
+    text-align: center;
+    line-height: 80px;
+}
+
+#game-screen input {
+    display: inline-block;
+    font-size: 50px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 4px;
+    width: 80%; 
+}
+
+#myProgress {
+    width: 300px;
+    margin: auto;
+    background: #1cff03;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #176aff;
+}
+
+#game-screen .correct-count {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#final-screen h3 span {
+    display: block;
+    font-size: 70px;
+    color: #1cff03;
+}
+.letter.first-letter {
+    color: red;  
+    font-weight: bold; 
+    font-size: 120%; 
+    text-shadow: 2px 2px 4px #b10909; 
+    background-color: #ffffa1; 
+}
+
+
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem; 
+    }
+
+    #game-screen .country-container .letter {
+        font-size: 1.5rem; 
+        line-height: 40px;
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+
+    #game-screen input {
+        font-size: 1.5rem;
+    }
+
+    #myProgress {
+        width: 80%; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem; 
+    }
+
+    #game-screen .country-container .letter {
+        font-size: 1rem; 
+        width: 40px; 
+        height: 40px; 
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+
+    #game-screen input {
+        font-size: 1.2rem;
+    }
+
+    #myProgress {
+        width: 90%; 
+    }
+}
